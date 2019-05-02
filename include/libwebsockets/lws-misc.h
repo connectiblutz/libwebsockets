@@ -56,7 +56,7 @@
  */
 
 #define lws_end_foreach_ll(it, nxt) \
-		it = it->nxt; \
+		if (it) it = it->nxt; \
 	} \
 }
 
@@ -308,7 +308,7 @@ lws_dll2_owner_clear(struct lws_dll2_owner *d);
 	while (___it) {
 
 #define lws_end_foreach_dll(___it) \
-		___it = (___it)->next; \
+		if (___it) ___it = (___it)->next; \
 	} \
 }
 
