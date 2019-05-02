@@ -135,7 +135,7 @@
  */
 
 #define lws_end_foreach_llp(it, nxt) \
-		it = &(*(it))->nxt; \
+		if (*it) it = &(*(it))->nxt; \
 	} \
 }
 
